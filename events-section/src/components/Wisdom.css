@@ -1,0 +1,14 @@
+.WiseSquare {
+    margin: 50px auto;
+    padding: 50px;
+    width: 50px;
+    border-radius: 8px;
+    font-size: 50px;
+    background-color: gray;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.WiseSquare:hover {
+    background-color: greenyellow;
+}
