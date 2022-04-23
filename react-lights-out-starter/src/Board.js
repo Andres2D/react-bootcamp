@@ -57,7 +57,14 @@ class Board extends Component {
   render() {
     return(
       <div>
-        <h1>Lights Out</h1>
+        <div className="Board-title">
+          <div className="neon-orange">
+            Lights
+          </div>
+          <div className="neon-blue">
+            Out
+          </div>
+        </div>
         <table className="Board">
           <tbody>
             {
@@ -65,7 +72,7 @@ class Board extends Component {
               ?
                 <tr>
                   <td>
-                    <h1>You Win!!</h1>
+                    <h1>You Won!!</h1>3053340284
                   </td>
                 </tr>
               :
