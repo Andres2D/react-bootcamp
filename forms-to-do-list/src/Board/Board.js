@@ -17,12 +17,21 @@ class Board extends Component {
 
     addUpdate(item, currentId) {
         if(currentId) {
-            const idx = this.state.list.findIndex(i => i.id === currentId);
-            let newItem = this.state.list[idx];
-            newItem.item = item;
-            this.setState(st => ({
-                list: [...st.list.slice(0, idx), st.list[idx] = newItem, ...st.list.slice(idx+1, st.list.length)]
-            }));
+            // const idx = this.state.list.findIndex(i => i.id === currentId);
+            // let newItem = this.state.list[idx];
+            // newItem.item = item;
+            // this.setState(st => ({
+            //     list: [...st.list.slice(0, idx), st.list[idx] = newItem, ...st.list.slice(idx+1, st.list.length)]
+            // }));
+            const updatedList = this.state.list.map(i => {
+                if(i.id === currentId) {
+                    return {...i, item};
+                }
+                return i;
+            }); 
+            this.setState({
+                list: updatedList
+            })
         }else {
             const id = uuidv4();
             this.setState({
@@ -32,9 +41,9 @@ class Board extends Component {
     }
 
     deleteItem(item) {
-        this.setState(st => ({
-            list: st.list.filter(i => i.id !== item.id)
-        }));
+        this.setState({
+            list: this.state.list.filter(i => i.id !== item.id)
+        });
     }
 
     render() {

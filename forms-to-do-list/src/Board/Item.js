@@ -17,9 +17,9 @@ class Item extends Component {
     }
 
     handleEdit() {
-        this.setState(st => ({
-            isEditing: !st.isEditing,
-        }));
+        this.setState({
+            isEditing: !this.state.isEditing,
+        });
     }
 
     handleSubmit(value) {
@@ -55,7 +55,9 @@ class Item extends Component {
                             style={
                                 {
                                     textDecoration: this.state.solved ? 'line-through' : 'none',
-                                    cursor: 'pointer'
+                                    color: this.state.solved ? 'gray' : 'black',
+                                    cursor: 'pointer',
+                                    transition: 'all 300ms'
                                 }
                             }
                             onClick={this.handleSolve}
