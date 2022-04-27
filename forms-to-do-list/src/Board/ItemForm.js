@@ -6,7 +6,7 @@ class ItemForm extends Component {
     constructor(props){
         super(props);
         this.state = {
-            item: ''
+            item: this.props.isEditing ? this.props.value : ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +20,7 @@ class ItemForm extends Component {
 
     handleSubmit(evt) {
         evt.preventDefault();
-        this.props.addItem(this.state.item);
+        this.props.addUpdateItem(this.state.item);
         this.setState({
             item: ''
         });
@@ -29,7 +29,13 @@ class ItemForm extends Component {
     render() {
         return(
             <form className='input' onSubmit={this.handleSubmit}>
-                <label className='label' htmlFor='todo'>New Todo</label>
+                {
+                    !this.props.isEditing 
+                    && <label 
+                            className='label' 
+                            htmlFor='todo'
+                        >New Todo</label>
+                }
                 <div>
                     <input 
                         className='box'
@@ -39,7 +45,7 @@ class ItemForm extends Component {
                         id="item"
                         onChange={this.handleChange}
                     />
-                    <button className='btn'>Add Todo</button>
+                    <button className='btn'>{this.props.isEditing ? 'Update' : 'Add Todo'}</button>
                 </div>
             </form>
         );
