@@ -75,7 +75,7 @@ class SmallStraight {
     this.score = (newArr.join('') === valid1 || newArr.join('' === valid2)) ? 30 : 0;
 
     if(this.score === 0) {
-      let newArr2 = [...original].slice(0, -1);
+      let newArr2 = [...d].slice(0, -1);
       this.score = (newArr2.join('') === valid1 || newArr2.join('') === valid2) ? 30 : 0;
     }
     return this.score;
