@@ -3,7 +3,6 @@ import RuleRow from './RuleRow';
 import './ScoreTable.css';
 import { ones, twos, threes, fours, fives, sixes, threeOfKind, fourOfKind, fullHouse, smallStraight, largeStraight, yahtzee, chance } from './Rules';
 
-
 class ScoreTable extends Component {
 
   static defaultProps = {
@@ -24,7 +23,9 @@ class ScoreTable extends Component {
 
   render() {
     const { scores, doScore } = this.props;
-
+    const score = Object.values(this.props.scores).filter(Number).length > 0 
+    ? Object.values(this.props.scores).filter(Number).reduce((prev, curr) => prev + curr)
+    : 0;
     return (
       <div className="ScoreTable">
         <section className="ScoreTable-section">
@@ -55,7 +56,7 @@ class ScoreTable extends Component {
           </table>
         </section>
         <section>
-          <h1>TOTAL SCORE: 0</h1>
+          <h2>TOTAL SCORE: {score}</h2>
         </section>
       </div>
     )

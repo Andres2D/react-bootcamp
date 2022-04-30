@@ -11,6 +11,7 @@ class Game extends Component {
     super(props);
     this.state = {
       dice: Array.from({ length: NUM_DICE }).fill('?'),
+      // dice: [5,2,3,4,5],
       locked: Array(NUM_DICE).fill(false),
       rollsLeft: NUM_ROLLS,
       scores: {
@@ -61,7 +62,6 @@ class Game extends Component {
     if(this.state.scores[rulename] === undefined){
       this.setState(st => ({
         scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
-        rollsLeft: NUM_ROLLS,
         locked: Array(NUM_DICE).fill(false)
       }));
       this.roll();
