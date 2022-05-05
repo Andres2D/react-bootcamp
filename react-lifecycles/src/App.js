@@ -1,12 +1,14 @@
 import './App.css';
-import Timer from './Basics/Timer';
-import ZenQuote from './Basics/ZenQuote';
+import GithubUserInfo from './Basics/GitHubUserInfo';
+// import Timer from './Basics/Timer';
+// import ZenQuote from './Basics/ZenQuote';
 
 function App() {
   return (
     <div className="App">
       {/* <Timer /> */}
-      <ZenQuote />
+      {/* <ZenQuote /> */}
+      <GithubUserInfo username='Andres2D' />
     </div>
   );
 }
