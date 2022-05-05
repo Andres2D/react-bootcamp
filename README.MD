@@ -15,7 +15,7 @@ Like ngOnInit() on AngularA
 Always fetch data on this lifecycle instead of the constructor
 
 ### componentDidUpdate
- ```
+```
 componentDidUpdate() {
     //code here
 }
