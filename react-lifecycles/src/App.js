@@ -1,14 +1,15 @@
 import './App.css';
-import GithubUserInfo from './Basics/GitHubUserInfo';
-// import Timer from './Basics/Timer';
-// import ZenQuote from './Basics/ZenQuote';
+import RMCharacter from './Basics/RMCharacter';
+import Timer from './Basics/Timer';
+import ZenQuote from './Basics/ZenQuote';
 
 function App() {
   return (
     <div className="App">
-      {/* <Timer /> */}
-      {/* <ZenQuote /> */}
-      <GithubUserInfo username='Andres2D' />
+      <Timer /> 
+      <ZenQuote />
+      <RMCharacter character='46' />
+      <RMCharacter character='89' />
     </div>
   );
 }

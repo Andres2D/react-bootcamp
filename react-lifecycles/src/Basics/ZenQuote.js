@@ -20,7 +20,11 @@ class ZenQuote extends Component {
             );
         });
     }
-    
+
+    componentDidUpdate() {
+        console.log('Component did update');
+    }    
+
     render() {
         return (
             <div>
