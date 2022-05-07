@@ -1,0 +1,29 @@
+.joke {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vote {
+    padding: 20px;
+    display: flex;
+}
+
+.vote-arrow {
+    padding: none;
+    border: none;
+    background-color: transparent;
+}
+
+.score {
+    border: 2px solid black;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.emoji-change {
+    padding: 20px;
+}
